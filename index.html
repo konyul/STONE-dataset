@@ -5,145 +5,371 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>STONE Dataset</title>
   <style>
+    :root {
+      --bg: #f6f8fb;
+      --panel: rgba(255, 255, 255, 0.82);
+      --panel-strong: rgba(255, 255, 255, 0.96);
+      --text: #172033;
+      --muted: #5e6a82;
+      --line: #e6ebf3;
+      --accent: #2563eb;
+      --accent-2: #1d4ed8;
+      --shadow: 0 10px 30px rgba(16, 24, 40, 0.08);
+      --radius: 22px;
+      --maxw: 1120px;
+    }
+
     * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      color: #222;
-      background: #ffffff;
-      line-height: 1.6;
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, #e9f0ff 0%, transparent 28%),
+        radial-gradient(circle at top right, #eefbf6 0%, transparent 22%),
+        linear-gradient(180deg, #f8fbff 0%, #f6f8fb 100%);
+      line-height: 1.65;
     }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
     .container {
-      width: min(1100px, 92%);
+      width: min(var(--maxw), 92%);
       margin: 0 auto;
     }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(10px);
+      background: rgba(246, 248, 251, 0.72);
+      border-bottom: 1px solid rgba(230, 235, 243, 0.85);
+    }
+
+    .nav-inner {
+      width: min(var(--maxw), 92%);
+      margin: 0 auto;
+      padding: 14px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      font-size: 1.05rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
     .hero {
-      padding: 56px 0 28px;
+      padding: 72px 0 34px;
       text-align: center;
     }
-    .title {
-      font-size: 2.3rem;
+
+    .badge {
+      display: inline-block;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(37, 99, 235, 0.08);
+      color: var(--accent-2);
+      border: 1px solid rgba(37, 99, 235, 0.12);
+      font-size: 0.9rem;
       font-weight: 700;
       margin-bottom: 18px;
     }
+
+    .title {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.1;
+      font-weight: 800;
+      letter-spacing: -0.035em;
+      margin: 0 auto 18px;
+      max-width: 980px;
+    }
+
+    .subtitle {
+      max-width: 860px;
+      margin: 0 auto 24px;
+      color: var(--muted);
+      font-size: 1.06rem;
+    }
+
     .authors {
-      font-size: 1.05rem;
-      color: #333;
-      margin-bottom: 10px;
+      max-width: 900px;
+      margin: 0 auto 10px;
+      font-size: 1rem;
     }
+
     .affiliation {
-      color: #666;
-      margin-bottom: 8px;
+      color: var(--muted);
+      margin-bottom: 28px;
     }
-    .note {
-      color: #777;
-      font-size: 0.92rem;
-      margin-bottom: 24px;
-    }
+
     .button-row {
       display: flex;
       justify-content: center;
-      gap: 12px;
       flex-wrap: wrap;
-      margin-bottom: 24px;
+      gap: 12px;
+      margin-bottom: 20px;
     }
+
     .btn {
-      display: inline-block;
-      padding: 12px 18px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 46px;
+      padding: 0 18px;
       border-radius: 999px;
-      background: #111;
+      font-weight: 700;
+      font-size: 0.96rem;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
       color: white;
-      text-decoration: none;
-      font-size: 0.95rem;
+      box-shadow: 0 8px 20px rgba(37, 99, 235, 0.24);
     }
-    .btn.secondary {
-      background: #f2f2f2;
-      color: #111;
-      border: 1px solid #ddd;
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.88);
+      border-color: var(--line);
+      color: var(--text);
+      box-shadow: var(--shadow);
     }
+
+    .hero-panel {
+      margin: 26px auto 0;
+      max-width: 950px;
+      background: var(--panel);
+      border: 1px solid rgba(255, 255, 255, 0.72);
+      box-shadow: var(--shadow);
+      border-radius: 28px;
+      padding: 22px;
+      text-align: left;
+    }
+
+    .hero-panel p {
+      margin: 0;
+      color: var(--muted);
+    }
+
     section {
-      padding: 36px 0;
-      border-top: 1px solid #ececec;
+      padding: 26px 0;
     }
-    h2 {
-      font-size: 1.6rem;
-      margin-bottom: 14px;
+
+    .section-card {
+      background: var(--panel);
+      border: 1px solid rgba(255, 255, 255, 0.72);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 28px;
     }
-    p {
-      margin-top: 0;
-      color: #333;
+
+    .section-header {
+      margin-bottom: 18px;
     }
-    .video-box {
-      width: 100%;
-      background: #000;
-      border-radius: 16px;
+
+    .section-kicker {
+      font-size: 0.85rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent-2);
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      margin: 0;
+      font-size: 1.7rem;
+      letter-spacing: -0.02em;
+    }
+
+    .section-desc {
+      margin-top: 10px;
+      color: var(--muted);
+    }
+
+    .video-shell {
       overflow: hidden;
+      border-radius: 18px;
+      background: #0b1020;
+      border: 1px solid #dbe3f0;
     }
+
     video {
       width: 100%;
       display: block;
     }
+
+    .grid-3,
+    .grid-4,
+    .grid-2 {
+      display: grid;
+      gap: 18px;
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
     .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
+
     .grid-4 {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
     }
-    .card {
-      background: #fafafa;
-      border: 1px solid #e9e9e9;
-      border-radius: 16px;
-      padding: 18px;
+
+    .mini-card {
+      background: var(--panel-strong);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 20px;
     }
-    .card h3 {
-      margin-top: 0;
-      margin-bottom: 10px;
-      font-size: 1.05rem;
+
+    .mini-card h3 {
+      margin: 0 0 10px;
+      font-size: 1.03rem;
+      letter-spacing: -0.015em;
     }
-    .stats {
-      font-size: 1.6rem;
-      font-weight: 700;
+
+    .mini-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.97rem;
+    }
+
+    .stat-card {
+      background: linear-gradient(180deg, #ffffff 0%, #f9fbff 100%);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .stat-num {
+      font-size: 1.9rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
       margin-bottom: 6px;
     }
-    .muted {
-      color: #666;
+
+    .stat-label {
+      color: var(--muted);
       font-size: 0.95rem;
     }
-    .pipeline-step {
-      margin-bottom: 12px;
-      padding: 14px 16px;
-      border-radius: 12px;
-      background: #fafafa;
-      border: 1px solid #ececec;
+
+    .method-step {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      padding: 18px;
+      background: var(--panel-strong);
+      border: 1px solid var(--line);
+      border-radius: 18px;
     }
+
+    .step-num {
+      width: 34px;
+      height: 34px;
+      flex: 0 0 34px;
+      border-radius: 50%;
+      background: rgba(37, 99, 235, 0.12);
+      color: var(--accent-2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+    }
+
+    .method-step h3 {
+      margin: 0 0 6px;
+      font-size: 1.03rem;
+    }
+
+    .method-step p {
+      margin: 0;
+      color: var(--muted);
+    }
+
     footer {
-      border-top: 1px solid #ececec;
-      padding: 24px 0 48px;
+      padding: 24px 0 46px;
+      color: var(--muted);
       text-align: center;
-      color: #666;
       font-size: 0.95rem;
     }
-    @media (max-width: 900px) {
-      .grid-3, .grid-4 {
-        grid-template-columns: 1fr;
+
+    @media (max-width: 920px) {
+      .grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .grid-3, .grid-2 { grid-template-columns: 1fr; }
+      .nav-inner {
+        flex-direction: column;
+        align-items: flex-start;
       }
-      .title {
-        font-size: 1.8rem;
-      }
+    }
+
+    @media (max-width: 560px) {
+      .grid-4 { grid-template-columns: 1fr; }
+      .section-card { padding: 22px; }
+      .hero-panel { padding: 18px; }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-
-    <header class="hero">
-      <div class="title">
-        STONE Dataset: A Scalable Multi-Modal Surround-View 3D Traversability Dataset for Off-Road Robot Navigation
+  <div class="nav">
+    <div class="nav-inner">
+      <div class="brand">STONE Dataset</div>
+      <div class="nav-links">
+        <a href="#abstract">Abstract</a>
+        <a href="#video">Video</a>
+        <a href="#highlights">Highlights</a>
+        <a href="#stats">Stats</a>
+        <a href="#method">Method</a>
       </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <header class="hero">
+      <div class="badge">ICRA 2026 Project Page</div>
+
+      <h1 class="title">
+        STONE Dataset: A Scalable Multi-Modal Surround-View 3D Traversability Dataset for Off-Road Robot Navigation
+      </h1>
+
+      <p class="subtitle">
+        A project page for your paper, video, code repository, and dataset overview.
+        Replace this sentence with a one-line summary you actually want to show.
+      </p>
 
       <div class="authors">
         Konyul Park*, Daehun Kim*, Jiyong Oh, Seunghoon Yu, Junseo Park,
@@ -154,130 +380,158 @@
         Seoul National University
       </div>
 
-      <div class="note">
-        * Equal contribution &nbsp;&nbsp; | &nbsp;&nbsp; † Corresponding author
-      </div>
-
       <div class="button-row">
         <a class="btn" href="assets/paper/final_paper_compressed.pdf" target="_blank">Paper</a>
         <a class="btn" href="#video">Video</a>
         <a class="btn" href="https://github.com/konyul/STONE" target="_blank">GitHub</a>
         <a class="btn secondary" href="#">Dataset</a>
       </div>
+
+      <div class="hero-panel">
+        <p>
+          Add one compact summary paragraph here. This box works well for the main message:
+          what the dataset is, why it matters, and what is included.
+        </p>
+      </div>
     </header>
 
     <section id="abstract">
-      <h2>Abstract</h2>
-      <p>
-        Reliable off-road navigation requires accurate estimation of traversable regions
-        and robust perception under diverse terrain and sensing conditions. STONE is a
-        large-scale multi-modal dataset for off-road robot navigation that provides
-        trajectory-guided 3D traversability maps generated by a fully automated
-        annotation-free pipeline. The dataset includes synchronized 128-channel LiDAR,
-        six RGB cameras, and three 4D imaging radars in a surround-view configuration.
-        It covers diverse environments and conditions, including day and night,
-        grasslands, farmlands, construction sites, and lakes, and establishes a benchmark
-        for voxel-level 3D traversability prediction.
-      </p>
+      <div class="section-card">
+        <div class="section-header">
+          <div class="section-kicker">Overview</div>
+          <h2 class="section-title">Abstract</h2>
+          <div class="section-desc">
+            Put the main abstract or a shortened project-page version here.
+          </div>
+        </div>
+        <p>
+          Replace this with your actual abstract. Keep it readable on the web:
+          usually 1 to 2 paragraphs is better than pasting the full camera-ready abstract
+          without formatting.
+        </p>
+      </div>
     </section>
 
     <section id="video">
-      <h2>Video</h2>
-      <div class="video-box">
-        <video controls playsinline preload="metadata">
-          <source src="assets/video/video.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+      <div class="section-card">
+        <div class="section-header">
+          <div class="section-kicker">Presentation</div>
+          <h2 class="section-title">Video</h2>
+        </div>
+        <div class="video-shell">
+          <video controls playsinline preload="metadata">
+            <source src="assets/video/ICRA26_4822_VI_fi.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
       </div>
     </section>
 
     <section id="highlights">
-      <h2>Highlights</h2>
-      <div class="grid-3">
-        <div class="card">
-          <h3>3D Traversability Ground Truth</h3>
-          <p>
-            STONE provides trajectory-guided 3D traversability maps generated automatically
-            without manual annotation.
-          </p>
+      <div class="section-card">
+        <div class="section-header">
+          <div class="section-kicker">Key Points</div>
+          <h2 class="section-title">Highlights</h2>
         </div>
-        <div class="card">
-          <h3>Multi-Modal Surround-View Sensing</h3>
-          <p>
-            The platform integrates LiDAR, six surround-view RGB cameras, and three 4D radars
-            for full-scene perception in off-road environments.
-          </p>
-        </div>
-        <div class="card">
-          <h3>Diverse Off-Road Conditions</h3>
-          <p>
-            The dataset includes farmland, mountainous terrain, lakes, and construction sites,
-            and contains both daytime and nighttime sequences.
-          </p>
+        <div class="grid-3">
+          <div class="mini-card">
+            <h3>3D Traversability Labels</h3>
+            <p>
+              Briefly summarize the core label representation or annotation pipeline.
+            </p>
+          </div>
+          <div class="mini-card">
+            <h3>Multi-Modal Surround-View Sensors</h3>
+            <p>
+              Summarize the sensor suite and why it is useful for off-road perception.
+            </p>
+          </div>
+          <div class="mini-card">
+            <h3>Diverse Off-Road Conditions</h3>
+            <p>
+              Summarize terrain diversity, weather, lighting, or geographic coverage.
+            </p>
+          </div>
         </div>
       </div>
     </section>
 
     <section id="stats">
-      <h2>Dataset Statistics</h2>
-      <div class="grid-4">
-        <div class="card">
-          <div class="stats">43</div>
-          <div class="muted">Sequences</div>
+      <div class="section-card">
+        <div class="section-header">
+          <div class="section-kicker">Dataset</div>
+          <h2 class="section-title">Statistics</h2>
         </div>
-        <div class="card">
-          <div class="stats">50,878</div>
-          <div class="muted">Frames</div>
-        </div>
-        <div class="card">
-          <div class="stats">31 / 7 / 5</div>
-          <div class="muted">Train / Val / Test Sequences</div>
-        </div>
-        <div class="card">
-          <div class="stats">6 Cameras + LiDAR + 4D Radar</div>
-          <div class="muted">Multi-modal sensor suite</div>
+        <div class="grid-4">
+          <div class="stat-card">
+            <div class="stat-num">43</div>
+            <div class="stat-label">Sequences</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">50,878</div>
+            <div class="stat-label">Frames</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">6 + 1 + 3</div>
+            <div class="stat-label">Cameras, LiDAR, 4D Radars</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">3D</div>
+            <div class="stat-label">Voxel Traversability Maps</div>
+          </div>
         </div>
       </div>
     </section>
 
     <section id="method">
-      <h2>Automatic 3D Traversability Map Generation</h2>
-
-      <div class="pipeline-step">
-        <strong>1. Dense Surface Reconstruction</strong><br />
-        Consecutive LiDAR scans are accumulated in the global coordinate system and
-        reconstructed into a dense 3D mesh.
+      <div class="section-card">
+        <div class="section-header">
+          <div class="section-kicker">Pipeline</div>
+          <h2 class="section-title">Automatic Map Generation</h2>
+        </div>
+        <div class="grid-2">
+          <div class="method-step">
+            <div class="step-num">1</div>
+            <div>
+              <h3>Dense Surface Reconstruction</h3>
+              <p>
+                Describe how the accumulated sensor data is reconstructed into a dense 3D representation.
+              </p>
+            </div>
+          </div>
+          <div class="method-step">
+            <div class="step-num">2</div>
+            <div>
+              <h3>Geometry-Aware Feature Extraction</h3>
+              <p>
+                Explain the terrain cues you compute, such as elevation, slope, and roughness.
+              </p>
+            </div>
+          </div>
+          <div class="method-step">
+            <div class="step-num">3</div>
+            <div>
+              <h3>Trajectory-Guided Labeling</h3>
+              <p>
+                Explain how traversability labels are derived or propagated from robot trajectories.
+              </p>
+            </div>
+          </div>
+          <div class="method-step">
+            <div class="step-num">4</div>
+            <div>
+              <h3>Benchmark Tasks</h3>
+              <p>
+                Add what tasks the dataset supports, such as voxel-level prediction or planning evaluation.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
-
-      <div class="pipeline-step">
-        <strong>2. Traversability-Oriented Feature Extraction</strong><br />
-        Geometric features such as elevation, slope, and roughness are extracted from
-        the reconstructed terrain surface.
-      </div>
-
-      <div class="pipeline-step">
-        <strong>3. Trajectory-Guided Auto-Labeling</strong><br />
-        Voxels along the robot trajectory are used as references, and traversability labels
-        are propagated to surrounding regions to generate scalable 3D ground truth.
-      </div>
-    </section>
-
-    <section id="description">
-      <h2>Description</h2>
-      <p>
-        STONE is designed to support research on robust 3D traversability prediction for
-        off-road robot navigation. Unlike prior datasets that rely on front-view sensing
-        or manual annotation, STONE focuses on scalable annotation-free 3D label generation
-        and comprehensive surround-view multi-modal perception.
-      </p>
-      <p>
-        The dataset also provides a benchmark for voxel-level 3D traversability prediction
-        under camera-only, LiDAR-only, and multi-modal settings.
-      </p>
     </section>
 
     <footer>
-      Project page for the STONE Dataset.
+      STONE Dataset project page.
     </footer>
   </div>
 </body>

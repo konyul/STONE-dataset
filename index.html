@@ -1,28 +1,238 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 50px;
-            background-color: #f4f4f4;
-        }
-        h1 {
-            color: #333;
-        }
-        a {
-            color: #0066cc;
-            text-decoration: none;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Project Page</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      color: #222;
+      background: #fff;
+    }
+    a { text-decoration: none; color: inherit; }
+    .container {
+      width: min(1100px, 92%);
+      margin: 0 auto;
+    }
+    .hero {
+      text-align: center;
+      padding: 56px 0 32px;
+    }
+    .title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    .authors {
+      font-size: 1.05rem;
+      color: #444;
+      margin-bottom: 10px;
+    }
+    .affiliation {
+      color: #666;
+      margin-bottom: 24px;
+    }
+    .button-row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 30px;
+    }
+    .btn {
+      padding: 12px 18px;
+      border-radius: 999px;
+      background: #111;
+      color: #fff;
+      font-size: 0.95rem;
+      display: inline-block;
+    }
+    .btn.light {
+      background: #f0f0f0;
+      color: #111;
+      border: 1px solid #ddd;
+    }
+    .hero-image {
+      width: 100%;
+      max-width: 900px;
+      border-radius: 16px;
+      display: block;
+      margin: 0 auto;
+    }
+    section {
+      padding: 36px 0;
+      border-top: 1px solid #eee;
+    }
+    h2 {
+      font-size: 1.6rem;
+      margin-bottom: 18px;
+    }
+    p {
+      margin: 0 0 14px;
+      color: #333;
+    }
+    .video-wrap {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #000;
+    }
+    .video-wrap iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .card {
+      background: #fafafa;
+      border: 1px solid #eee;
+      border-radius: 16px;
+      padding: 14px;
+    }
+    .card img {
+      width: 100%;
+      border-radius: 12px;
+      display: block;
+      margin-bottom: 10px;
+    }
+    .caption {
+      font-size: 0.95rem;
+      color: #555;
+    }
+    footer {
+      padding: 30px 0 50px;
+      color: #666;
+      font-size: 0.95rem;
+      text-align: center;
+      border-top: 1px solid #eee;
+      margin-top: 20px;
+    }
+    @media (max-width: 800px) {
+      .grid-2, .grid-3 {
+        grid-template-columns: 1fr;
+      }
+      .title {
+        font-size: 1.7rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <h1>Welcome to My Portfolio</h1>
-    <p>This is my personal space on the web.</p>
-    <a href="https://github.com/yourusername" target="_blank">Visit My GitHub</a>
+
+  <div class="container">
+    <header class="hero">
+      <div class="title">
+        My Dataset: Title of Your Paper or Project
+      </div>
+
+      <div class="authors">
+        Author A, Author B, Author C, Author D
+      </div>
+
+      <div class="affiliation">
+        Your University or Lab
+      </div>
+
+      <div class="button-row">
+        <a class="btn" href="https://arxiv.org/" target="_blank">Paper</a>
+        <a class="btn" href="https://github.com/" target="_blank">Code</a>
+        <a class="btn" href="https://youtube.com/" target="_blank">Video</a>
+        <a class="btn light" href="https://huggingface.co/" target="_blank">Dataset</a>
+      </div>
+
+      <img class="hero-image" src="assets/teaser.png" alt="Project teaser image" />
+    </header>
+
+    <section>
+      <h2>Abstract</h2>
+      <p>
+        Write your abstract here. Summarize the problem, the method, and the
+        main contribution in one or two paragraphs.
+      </p>
+    </section>
+
+    <section>
+      <h2>Video</h2>
+      <div class="video-wrap">
+        <iframe
+          src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+          title="Project Video"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </section>
+
+    <section>
+      <h2>Scenes / Examples</h2>
+      <div class="grid-3">
+        <div class="card">
+          <img src="assets/scene1.jpg" alt="Scene 1" />
+          <div class="caption">Outdoor scene</div>
+        </div>
+        <div class="card">
+          <img src="assets/scene2.jpg" alt="Scene 2" />
+          <div class="caption">Indoor scene</div>
+        </div>
+        <div class="card">
+          <img src="assets/scene3.jpg" alt="Scene 3" />
+          <div class="caption">Another benchmark scene</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Robot Setup / Data Collection</h2>
+      <div class="grid-2">
+        <div class="card">
+          <img src="assets/robot.jpg" alt="Robot setup" />
+        </div>
+        <div class="card">
+          <p><b>Platform:</b> Husky UGV</p>
+          <p><b>Sensors:</b> LiDAR, RGB cameras, IMU, RTK</p>
+          <p><b>Collection:</b> Describe how the data was collected.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Results / Gallery</h2>
+      <div class="grid-3">
+        <div class="card">
+          <img src="assets/result1.jpg" alt="Result 1" />
+          <div class="caption">Result example 1</div>
+        </div>
+        <div class="card">
+          <img src="assets/result2.jpg" alt="Result 2" />
+          <div class="caption">Result example 2</div>
+        </div>
+        <div class="card">
+          <img src="assets/result3.jpg" alt="Result 3" />
+          <div class="caption">Result example 3</div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      Copyright 2026 Your Lab. Built for GitHub Pages.
+    </footer>
+  </div>
+
 </body>
 </html>

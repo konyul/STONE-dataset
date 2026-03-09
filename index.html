@@ -229,6 +229,25 @@
       width: 100%;
       display: block;
     }
+    .hero-image-top,
+    .hero-image-mid {
+      width: 100%;
+      max-width: 1000px;
+      margin: 22px auto;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--line);
+      background: white;
+    }
+    
+    .hero-image-top img,
+    .hero-image-mid img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
 
     .grid-3,
     .grid-4,
@@ -380,7 +399,7 @@
       </div>
       
       <div class="hero-image-top">
-        <img src="assets/images/teaser_top.png" alt="STONE dataset teaser top" />
+        <img src="assets/images/teaser.png" alt="STONE dataset teaser top" />
       </div>
       
       <div class="button-row">

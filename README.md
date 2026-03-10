@@ -25,7 +25,7 @@
 <br>
 
 <p align="center">
-<b>🌄 Example Scenes from the STONE Dataset</b>
+<b>📷 Example Scenes from the STONE Dataset</b>
 </p>
 
 <p align="center">

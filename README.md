@@ -1,5 +1,5 @@
 <h1 align="center">
-<img src="assets/images/teasor_imoge.png" height="42"> STONE Dataset
+🌄🚗STONE Dataset
 </h1>
 
 <h3 align="center">

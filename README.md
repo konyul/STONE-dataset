@@ -6,3 +6,6 @@
 A Scalable Multi-Modal Surround-View 3D Traversability Dataset<br>
 for Off-Road Robot Navigation
 </h3>
+<p align="center">
+<img src="assets/images/teaser.png" width="900">
+</p>

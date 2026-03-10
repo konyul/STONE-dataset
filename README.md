@@ -12,12 +12,12 @@
 
 <p align="center">
 
-<a href="PAPER_LINK">
-<img src="https://img.shields.io/badge/Paper-PDF-red?style=for-the-badge&logo=arxiv">
+<a href="assets/paper/final_paper_compressed.pdf">
+<img src="https://img.shields.io/badge/Paper-PDF-red?style=for-the-badge&logo=adobeacrobatreader">
 </a>
 
-<a href="HOMEPAGE_LINK">
-<img src="https://img.shields.io/badge/Homepage-Project_Page-blue?style=for-the-badge&logo=google-chrome">
+<a href="https://konyul.github.io/STONE-dataset">
+<img src="https://img.shields.io/badge/Homepage-Project_Page-blue?style=for-the-badge&logo=googlechrome">
 </a>
 
 </p>

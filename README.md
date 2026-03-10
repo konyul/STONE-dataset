@@ -1,7 +1,6 @@
 <div align="center">
 
 # 🌄🚗 STONE Dataset
-
 ### A Scalable Multi-Modal Surround-View 3D Traversability Dataset  
 ### for Off-Road Robot Navigation
 

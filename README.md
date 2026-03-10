@@ -13,11 +13,11 @@
 <p align="center">
 
 <a href="https://konyul.github.io/STONE-dataset/assets/paper/final_paper_compressed.pdf">
-<img src="https://img.shields.io/badge/Paper-PDF-red?style=for-the-badge&logo=adobeacrobatreader">
+<img src="https://img.shields.io/badge/📄%20Paper-PDF-red?style=for-the-badge">
 </a>
 
 <a href="https://konyul.github.io/STONE-dataset">
-<img src="https://img.shields.io/badge/Homepage-Project_Page-blue?style=for-the-badge&logo=googlechrome">
+<img src="https://img.shields.io/badge/🌐%20Homepage-Project_Page-blue?style=for-the-badge">
 </a>
 
 </p>

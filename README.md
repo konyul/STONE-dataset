@@ -36,6 +36,6 @@
 
 ## 📢 Updates
 
-- **[2024-10]** The Google Form link for download has been changed. [Google Form](#)
-- **[2024-06]** The final dataset is released! Download it via the link at the end of the Google Form. [Google Form](#)
-- **[2023-09]** Our paper is accepted to NeurIPS 2023 Dataset and Benchmark Track! [Paper Link](#)
+- **[2026-03]** We opened the [STONE Dataset GitHub](https://github.com/konyul/STONE).
+- **[2026-03]** We opened the [STONE Dataset Website](https://konyul.github.io/STONE-dataset).
+- **[2026-02]** Our paper has been accepted to ICRA 2026.

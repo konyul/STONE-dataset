@@ -21,3 +21,11 @@
 </a>
 
 </p>
+
+<br>
+
+<h2 align="center">📊 Example of STONE Dataset</h2>
+
+<p align="center">
+<img src="assets/images/teaser_mid.png" width="600">
+</p>

@@ -7,7 +7,7 @@
 </div>
 
 <p align="center">
-<img src="assets/images/teaser.png" width="300">
+<img src="assets/images/teaser.png" width="400">
 </p>
 
 <p align="center">
@@ -29,7 +29,7 @@
 </p>
 
 <p align="center">
-<img src="assets/images/teaser_mid.png" width="600">
+<img src="assets/images/teaser_mid.png" width="800">
 </p>
 
 <br>

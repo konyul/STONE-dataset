@@ -31,3 +31,11 @@
 <p align="center">
 <img src="assets/images/teaser_mid.png" width="600">
 </p>
+
+<br>
+
+## 📢 Updates
+
+- **[2024-10]** The Google Form link for download has been changed. [Google Form](#)
+- **[2024-06]** The final dataset is released! Download it via the link at the end of the Google Form. [Google Form](#)
+- **[2023-09]** Our paper is accepted to NeurIPS 2023 Dataset and Benchmark Track! [Paper Link](#)

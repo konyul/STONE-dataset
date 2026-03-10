@@ -24,7 +24,9 @@
 
 <br>
 
-<h2 align="center">📊 Example of STONE Dataset</h2>
+<p align="center">
+<b>🌄 Example Scenes from the STONE Dataset</b>
+</p>
 
 <p align="center">
 <img src="assets/images/teaser_mid.png" width="600">

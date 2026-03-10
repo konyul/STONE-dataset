@@ -12,7 +12,7 @@
 
 <p align="center">
 
-<a href="https://github.com/USERNAME/REPO/raw/main/assets/paper/final_paper_compressed.pdf">
+<a href="https://konyul.github.io/STONE-dataset/assets/paper/final_paper_compressed.pdf">
 <img src="https://img.shields.io/badge/Paper-PDF-red?style=for-the-badge&logo=adobeacrobatreader">
 </a>
 

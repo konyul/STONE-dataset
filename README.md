@@ -39,3 +39,9 @@
 - **[2026-03]** We opened the [STONE Dataset GitHub](https://github.com/konyul/STONE).
 - **[2026-03]** We opened the [STONE Dataset Website](https://konyul.github.io/STONE-dataset).
 - **[2026-02]** Our paper has been accepted to ICRA 2026.
+
+<br>
+
+## 🔜 Upcoming
+
+- **[2026]** The final dataset will be released. Download will be available via a Google Form.

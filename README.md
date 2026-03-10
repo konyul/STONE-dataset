@@ -1,11 +1,11 @@
-<h1 align="center">
-🌄🚗 STONE Dataset
-</h1>
+<p align="center">
+<b style="font-size:40px">🌄🚗 STONE Dataset</b>
+</p>
 
-<h3 align="center">
+<p align="center">
 A Scalable Multi-Modal Surround-View 3D Traversability Dataset<br>
 for Off-Road Robot Navigation
-</h3>
+</p>
 
 <hr>
 

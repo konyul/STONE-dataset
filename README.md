@@ -48,7 +48,6 @@
 <br>
 
 ## 🌍 Overview
-## 🌍 Overview
 
 **STONE** is a large-scale multi-modal dataset designed for **off-road navigation and 3D traversability prediction**.
 
